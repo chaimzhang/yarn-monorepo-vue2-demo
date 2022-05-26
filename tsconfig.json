@@ -17,9 +17,15 @@
       "webpack-env"
     ],
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@common/*": [
+        "common/*"
+      ],
+      "@project1/*": [
+        "project1/*"
+      ],
+      "@project2/*": [
+        "project2/*"
+      ],
     },
     "lib": [
       "esnext",
@@ -29,11 +35,13 @@
     ]
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "typings",
+    "common/**/*.ts",
+    "common/**/*.vue",
+    "project1/**/*.ts",
+    "project1/**/*.vue",
+    "project2/**/*.ts",
+    "project2/**/*.vue"
   ],
   "exclude": [
     "node_modules"
