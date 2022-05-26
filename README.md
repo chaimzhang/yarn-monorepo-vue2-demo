@@ -1,13 +1,13 @@
 # 基于 `vuecli`+`vue2`+`ts` 的单工程多项目开发示例
 ## 起因
-在开发大型项目时，需要划分分业务模块以及不同业务部署到不同服务器上，如果按原来的单页应用开发，业务无法分离，最后打包出来包含了所有项目的页面代码会使包比较大。
+在开发大型项目时，需要划分业务模块以及不同业务部署到不同服务器上，如果按原来的单页应用开发，业务无法分离，最后打包出来包含了所有项目的页面代码会使包比较大。
 
-在上线后，如果只改动其中一个与其他业务不相关的业务模块的代码，其他项目不需要重新打包部署，有利于开发和维护。
+使用此方式分成多个子项目分别开发，在上线后，如果只改动其中一个与其他业务不相关的项目模块的代码，其他项目不需要重新打包部署，有利于开发和维护。
 
 ---
 ## 目标
 - 多个项目共用一套配置、node_modules依赖
-- 可以互相引用其它项目内组件、工具方法
+- 可以互相引用其它项目内组件、工具方法等
 - 每个项目可以独立启动、打包
 
 ---
@@ -100,9 +100,11 @@ const projectDir = process.env.projectDir;
 const {defineConfig} = require('@vue/cli-service')
 module.exports = defineConfig({
     chainWebpack: config => {
+        // 使用copy-webpack-plugin复制静态资源
         config.plugin('copy').use(require('copy-webpack-plugin'), [{
             patterns:
-                [{from: './common/public', to: './'},
+                [
+                    {from: './common/public', to: './'},
                     {from: `./${projectDir}/public`, to: './'}
                 ]
         }
