@@ -1,0 +1,13 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "outDir": "dist/tsc"
+    },
+    "include": [
+        "typings"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

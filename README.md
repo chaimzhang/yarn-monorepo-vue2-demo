@@ -1,4 +1,4 @@
-# 基于 `vuecli`+`vue2`+`ts` 的单工程多项目开发示例
+# 基于 `yarn monorepo`+`vue2` 的多模块项目开发示例
 ## 起因
 在开发大型项目时，需要划分业务模块以及不同业务部署到不同服务器上，如果按原来的单页应用开发，业务无法分离，最后打包出来包含了所有项目的页面代码会使包比较大。
 
@@ -6,9 +6,9 @@
 
 ---
 ## 目标
-- 多个项目共用一套配置、node_modules依赖
-- 可以互相引用其它项目内组件、工具方法等
-- 每个项目可以独立启动、打包
+- 多个模块共用相同node_modules依赖，无需重复安装
+- 通用方法、组件放到统一目录下，也可以互相引用其它项目内组件、工具方法等
+- 每个模块可以独立启动、打包
 
 ---
 
@@ -17,30 +17,28 @@
 - 工程目录主要结构
 ```
 node_modules
-common
-    |- assets
-    |- public
-        |- config.js
-        | favicon.ico
-    |- view
-        |- App.vue
-    |- util
-project1
-    |- assets
-    |- public
-    |- router
-    |- store
-    |- view
-        |- home.vue
-    |- main.ts
-project2
-    |- assets
-    |- public
-    |- router
-    |- store
-    |- view
-        |- home.vue
-    |- main.ts
+packages
+  |- common
+        |- assets
+        |- view
+            |- App.vue
+        |- util
+    project1
+        |- assets
+        |- public
+        |- router
+        |- store
+        |- view
+            |- home.vue
+        |- main.ts
+    project2
+        |- assets
+        |- public
+        |- router
+        |- store
+        |- view
+            |- home.vue
+        |- main.ts
 typings
     |- shims-vue.d.ts
 index.html
@@ -151,4 +149,4 @@ module.exports = defineConfig({
 ```
 ###  6. 大功告成
 - 完成以上配置后，各子项目即可单独启动和打包。
-- 参考：[示例项目代码](https://github.com/chaimzhang/vue2-mulit-project-demo)
+- 参考：[示例项目代码](https://github.com/chaimzhang/yarn-monorepo-vue2-demo)

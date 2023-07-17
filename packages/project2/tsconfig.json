@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist/tsc",
+    "paths": {
+      "@common/*": [
+        "../common/*"
+      ],
+      "@project1/*": [
+        "../project1/src/*"
+      ],
+      "@project2/*": [
+        "src/*"
+      ],
+    }
+  },
+  "include": [
+    "../common/typings"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

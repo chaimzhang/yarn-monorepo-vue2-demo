@@ -1,25 +1,15 @@
 {
-  "name": "yarn-monorepo-vue2-demo",
+  "name": "project2",
+  "version": "1.0.0",
   "private": true,
   "author": {
     "name": "chaimzhang",
     "url": "https://github.com/chaimzhang",
     "email": "zhang.qm@qq.com"
   },
-  "repository": {
-    "url": "https://github.com/chaimzhang/yarn-monorepo-vue2-demo",
-    "directory": "yarn workspace monorepo vue2 vuecli typescript multi-project"
-  },
-  "workspaces":[
-    "packages/*"
-  ],
   "scripts": {
-    "serve:project1": "yarn workspace project1 serve",
-    "build:project1": "yarn workspace project1 build",
-    "serve:project2": "yarn workspace project2 serve",
-    "build:project2": "yarn workspace project2 build",
-    "serve": "yarn serve:project1 & yarn serve:project2",
-    "build": "yarn build:project1 & yarn build:project2"
+    "serve": "vue-cli-service serve --port 4201",
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -47,25 +37,5 @@
     "less-loader": "^8.0.0",
     "typescript": "~4.5.5",
     "vue-template-compiler": "^2.6.14"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended",
-      "@vue/typescript/recommended"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 2020
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+  }
 }

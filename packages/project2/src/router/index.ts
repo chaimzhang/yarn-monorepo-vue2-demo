@@ -11,7 +11,7 @@ const routes: Array<RouteConfig> = [
     {
         path: '/home',
         name: 'home',
-        component: () => import('@project1/view/HomeView.vue')
+        component: () => import('../view/HomeView.vue')
     }
 ]
 

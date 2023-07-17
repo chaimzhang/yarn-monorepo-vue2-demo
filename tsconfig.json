@@ -36,12 +36,12 @@
   },
   "include": [
     "typings",
-    "common/**/*.ts",
-    "common/**/*.vue",
-    "project1/**/*.ts",
-    "project1/**/*.vue",
-    "project2/**/*.ts",
-    "project2/**/*.vue"
+    "packages/common/**/*.ts",
+    "packages/common/**/*.vue",
+    "packages/project1/**/*.ts",
+    "packages/project1/**/*.vue",
+    "packages/project2/**/*.ts",
+    "packages/project2/**/*.vue"
   ],
   "exclude": [
     "node_modules"
